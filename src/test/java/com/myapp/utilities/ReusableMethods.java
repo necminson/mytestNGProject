@@ -10,6 +10,14 @@ import static org.testng.AssertJUnit.*;
 
 
 public class ReusableMethods {
+    public static void goToURL(String URL){
+        try{
+            Driver.getDriver().get(ConfigReader.getProperty(URL));
+        } catch (Exception e) {
+            WaitUtils.waitFor(1);
+
+        }
+    }
     public static void clickWithTimeOut(WebElement element, int timeout) {
         for (int i = 0; i < timeout; i++) {
             try {
@@ -191,6 +199,17 @@ public class ReusableMethods {
         } catch (NoSuchElementException e) {
             e.printStackTrace();
         }
+    }
+    // Verify is expected and actual texts are matching
+    public static void verifyExpectedAndActualTextMatch(String expectedText,WebElement actualElement ){
+        try{
+            // Just in case there is a synchronization issue,
+            WaitUtils.waitForVisibility(actualElement,10);
+            assertEquals(expectedText,actualElement.getText());
+        } catch (NoSuchElementException e) {
+            e.printStackTrace();
+        }
+
     }
     //    ALERT
     public void acceptAlert() throws InterruptedException {
