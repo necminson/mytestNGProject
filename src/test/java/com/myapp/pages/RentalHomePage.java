@@ -11,6 +11,10 @@ public class RentalHomePage {
     public WebElement loginLink;
     @FindBy(id = "dropdown-basic-button")
     public WebElement userID;
+    @FindBy(linkText = "Logout")
+    public WebElement logOut;
+    @FindBy(xpath = "//button[.='OK']")
+    public WebElement OK;
     @FindBy(name = "car")
     public WebElement selectCar;
 
