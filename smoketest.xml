@@ -1,0 +1,12 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name="Smoke Test Suite" verbose="1" >
+    <test name="smoke test"   >
+        <packages>
+            <package name="com.myapp.tests.smoketestsuite.logintests" />
+        </packages>
+    </test>
+</suite>
+        <!--verbose="1" the amount of information you see on the console
+SAVE your xml files : Control + S ||| COMMAND + S ||| FILE> SAVE ALL
+NOTE: if you see no class found , double check you path and try to run other packages-->
